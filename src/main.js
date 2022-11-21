@@ -2,9 +2,7 @@ import './style.css';
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-import store from './store';
-
-//createApp(App).use(createRouter()).mount('#app');
+import { createPinia } from 'pinia';
 
 // axios.defaults.withCredentials = true;
 // axios.defaults.baseURL = 'https://webdesignnop.nl/';
@@ -22,13 +20,7 @@ import store from './store';
 
 // Vue.config.productionTip = false;
 
-// new Vue({
-//   // store,
-//   // router,
-//   render: (h) => h(App),
-// }).$mount('#app');
-
 let app = createApp(App);
 app.use(router);
-app.use(store);
+app.use(createPinia());
 app.mount('#app');

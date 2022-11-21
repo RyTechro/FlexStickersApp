@@ -2,6 +2,9 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import NavBar from './components/NavBar.vue';
+import { useAuthStore } from './stores/auth';
+
+const store = useAuthStore();
 </script>
 
 <template>
@@ -9,7 +12,7 @@ import NavBar from './components/NavBar.vue';
     <main>
       <router-view />
     </main>
-    <NavBar />
+    <NavBar v-if="store.isAuthenticated" />
   </div>
 </template>
 
