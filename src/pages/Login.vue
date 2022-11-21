@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       user: '',
-      token: 'groen wit rood',
+      token: '',
     };
   },
   setup() {
