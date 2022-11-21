@@ -1,4 +1,4 @@
-// import store from '../store';
+import { useAuthStore } from '../stores/auth';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Home from '../pages/Home.vue';
 import Login from '../pages/Login.vue';
@@ -39,11 +39,12 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  const store = useAuthStore();
   if (to.matched.some((record) => record.meta.requiresAuth)) {
-    // if (store.getters.isAuthenticated) {
-    //   next();
-    //   return;
-    // }
+    if (store.isAuthenticated) {
+      next();
+      return;
+    }
     next('/login');
   } else {
     next();
@@ -51,11 +52,12 @@ router.beforeEach((to, from, next) => {
 });
 
 router.beforeEach((to, from, next) => {
+  const store = useAuthStore();
   if (to.matched.some((record) => record.meta.guest)) {
-    // if (store.getters.isAuthenticated) {
-    //   next('/');
-    //   return;
-    // }
+    if (store.isAuthenticated) {
+      next('/');
+      return;
+    }
     next();
   } else {
     next();

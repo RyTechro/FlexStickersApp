@@ -1,28 +1,31 @@
 import { defineStore } from 'pinia';
+import { useStorage } from '@vueuse/core';
 
 export const useAuthStore = defineStore('auth', {
   state: () => {
     return {
-      username: null,
-      userid: null,
-      token: null,
+      username: useStorage('username', null),
+      userid: useStorage('userid', null),
+      token: useStorage('token', null),
     };
   },
   actions: {
     login(user, token) {
-      alert('login method auth store');
       //axios request
       this.username = 'Robin';
       this.userid = 1;
       this.token = 'guid-token-1234';
     },
+    logout() {
+      //axios request
+      this.username = null;
+      this.userid = null;
+      this.token = null;
+    },
   },
   getters: {
-    // doubleCount: (state) => {
-    //   return state.count * 2;
-    // },
     isAuthenticated() {
-      return !!this.userid;
+      return this.userid;
     },
   },
 });

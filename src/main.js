@@ -1,8 +1,8 @@
 import './style.css';
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router';
 import { createPinia } from 'pinia';
+import router from './router';
 
 // axios.defaults.withCredentials = true;
 // axios.defaults.baseURL = 'https://webdesignnop.nl/';
@@ -20,7 +20,9 @@ import { createPinia } from 'pinia';
 
 // Vue.config.productionTip = false;
 
+let pinia = createPinia();
+
 let app = createApp(App);
+app.use(pinia);
 app.use(router);
-app.use(createPinia());
 app.mount('#app');

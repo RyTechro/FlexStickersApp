@@ -53,6 +53,7 @@ export default {
       }
       this.store.login(this.user, this.token);
       this.token = '';
+      this.$router.push('/');
     },
   },
 };
