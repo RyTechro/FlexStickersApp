@@ -4,6 +4,8 @@ import App from './App.vue';
 import { createPinia } from 'pinia';
 import router from './router';
 
+import './registerServiceWorker';
+
 // axios.defaults.withCredentials = true;
 // axios.defaults.baseURL = 'https://webdesignnop.nl/';
 
