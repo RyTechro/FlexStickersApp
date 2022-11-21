@@ -24,4 +24,4 @@ jobs:
         server: webdesignnop.nl
         username: flexapp-github-ftp@webdesignnop.nl
         password: ${{ secrets.FTP_PASSWORD }}
-	local-dir: ./dist/
+        local-dir: ./dist/
