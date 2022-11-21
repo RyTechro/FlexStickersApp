@@ -11,13 +11,22 @@ export const useAuthStore = defineStore('auth', {
     };
   },
   actions: {
-    login(user, token) {
-      axios.get('https://webdesignnop.nl/orders/').then((response) => {
-        alert(JSON.stringify(response));
-      });
-      this.username = 'Robin';
-      this.userid = 1;
-      this.token = 'guid-token-1234';
+    async login(user, token) {
+      await axios
+        .get(
+          'https://webdesignnop.nl/authenticate/?user=' +
+            user +
+            '&token=' +
+            token
+        )
+        .then((response) => {
+          this.username = response.data.data.username;
+          this.userid = response.data.data.userid;
+          this.token = response.data.data.token;
+        })
+        .catch((response) => {
+          alert(JSON.stringify(response));
+        });
     },
     logout() {
       this.username = null;
@@ -27,8 +36,7 @@ export const useAuthStore = defineStore('auth', {
   },
   getters: {
     isAuthenticated() {
-      this.logout();
-      return this.userid;
+      return !!this.userid;
     },
   },
 });

@@ -4,8 +4,8 @@
     <div class="mb-3">
       <label for="selectUser" class="form-label">Gebruiker</label>
       <select class="form-control" id="selectUser" v-model="user">
-        <option value="1">Robin</option>
-        <option value="2" ref="defaultOption">Boas</option>
+        <option value="1" ref="defaultOption">Robin</option>
+        <option value="2">Boas</option>
         <option value="3">Erik</option>
       </select>
     </div>
@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       user: '',
-      token: '',
+      token: 'groen wit rood',
     };
   },
   setup() {
@@ -45,13 +45,13 @@ export default {
     this.user = this.$refs.defaultOption.value;
   },
   methods: {
-    onSubmit(e) {
+    async onSubmit(e) {
       e.preventDefault();
       if (!this.token) {
         // alert is ok due to clientside validation.
         return;
       }
-      this.store.login(this.user, this.token);
+      await this.store.login(this.user, this.token);
       this.token = '';
       this.$router.push('/');
     },
