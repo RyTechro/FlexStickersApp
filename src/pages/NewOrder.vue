@@ -29,12 +29,12 @@
           id="customerSearch"
           aria-describedby="button-addon2"
         />
-        <span class="input-group-text"
+        <!-- <span class="input-group-text"
           ><svg class="bi text-dark" width="12" height="12">
             <use
               xlink:href="node_modules/bootstrap-icons/bootstrap-icons.svg#search"
             /></svg
-        ></span>
+        ></span> -->
         <button
           class="btn btn-outline-secondary"
           type="button"
@@ -175,11 +175,11 @@
     </div>
   </div>
   <div class="saveButton">
-    <svg class="bi text-dark" width="40" height="40">
+    <!-- <svg class="bi text-dark" width="40" height="40">
       <use
         xlink:href="node_modules/bootstrap-icons/bootstrap-icons.svg#check"
       />
-    </svg>
+    </svg> -->
   </div>
 </template>
 

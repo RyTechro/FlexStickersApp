@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { useStorage } from '@vueuse/core';
+import axios from 'axios';
 
 export const useAuthStore = defineStore('auth', {
   state: () => {
@@ -11,13 +12,14 @@ export const useAuthStore = defineStore('auth', {
   },
   actions: {
     login(user, token) {
-      //axios request
+      axios.get('https://webdesignnop.nl/orders/').then((response) => {
+        alert(JSON.stringify(response));
+      });
       this.username = 'Robin';
       this.userid = 1;
       this.token = 'guid-token-1234';
     },
     logout() {
-      //axios request
       this.username = null;
       this.userid = null;
       this.token = null;
@@ -25,6 +27,7 @@ export const useAuthStore = defineStore('auth', {
   },
   getters: {
     isAuthenticated() {
+      this.logout();
       return this.userid;
     },
   },

@@ -37,11 +37,11 @@ export default {
     <ul class="nav fixed-bottom nav-pills nav-fill">
       <li class="nav-item">
         <a class="nav-link disabled" data-tab="tabProducts" href="#tabProducts">
-          <svg class="bi text-dark" width="28" height="28">
+          <!-- <svg class="bi text-dark" width="28" height="28">
             <use
               xlink:href="node_modules/bootstrap-icons/bootstrap-icons.svg#umbrella"
             />
-          </svg>
+          </svg> -->
         </a>
       </li>
       <li class="nav-item">
@@ -56,11 +56,11 @@ export default {
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" data-tab="tabStats" href="#tabStats">
-          <svg class="bi text-dark" width="28" height="28">
+          <!-- <svg class="bi text-dark" width="28" height="28">
             <use
               xlink:href="node_modules/bootstrap-icons/bootstrap-icons.svg#bar-chart-line"
             />
-          </svg>
+          </svg> -->
         </a>
       </li>
       <li class="nav-item">
@@ -69,11 +69,11 @@ export default {
           data-tab="tabCustomers"
           href="#tabCustomers"
         >
-          <svg class="bi text-dark" width="28" height="28">
+          <!-- <svg class="bi text-dark" width="28" height="28">
             <use
               xlink:href="node_modules/bootstrap-icons/bootstrap-icons.svg#book"
             />
-          </svg>
+          </svg> -->
         </a>
       </li>
     </ul>
