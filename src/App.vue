@@ -2,6 +2,7 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import NavBar from './components/NavBar.vue';
+import MessageView from './components/MessageView.vue';
 import { useAuthStore } from './stores/auth';
 
 const store = useAuthStore();
@@ -13,6 +14,7 @@ const store = useAuthStore();
       <router-view />
     </main>
     <NavBar v-if="store.isAuthenticated" />
+    <MessageView />
   </div>
 </template>
 

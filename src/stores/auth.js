@@ -14,7 +14,7 @@ export const useAuthStore = defineStore('auth', {
     async login(user, token) {
       await axios
         .get(
-          'https://webdesignnop.nl/authenticate/?user=' +
+          'https://api.webdesignnop.nl/authenticate/?user=' +
             user +
             '&token=' +
             token
